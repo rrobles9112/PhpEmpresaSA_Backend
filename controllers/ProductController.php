@@ -13,6 +13,11 @@ class ProductController extends ActiveController
 {
     public $modelClass = 'app\models\Products';
 
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'products',
+    ];
+
     public function actions(){
         $actions = parent::actions();
         unset($actions['index']);
